@@ -1,76 +1,17 @@
-#Step 4
-
 import random
+from hangman_art import *
+from hangman_words import *
 
-stages = ['''
-  +---+
-  |   |
-  O   |
- /|\  |
- / \  |
-      |
-=========
-''', '''
-  +---+
-  |   |
-  O   |
- /|\  |
- /    |
-      |
-=========
-''', '''
-  +---+
-  |   |
-  O   |
- /|\  |
-      |
-      |
-=========
-''', '''
-  +---+
-  |   |
-  O   |
- /|   |
-      |
-      |
-=========''', '''
-  +---+
-  |   |
-  O   |
-  |   |
-      |
-      |
-=========
-''', '''
-  +---+
-  |   |
-  O   |
-      |
-      |
-      |
-=========
-''', '''
-  +---+
-  |   |
-      |
-      |
-      |
-      |
-=========
-''']
+print(logo)
 
 end_of_game = False
-word_list = ["ardvark", "baboon", "camel"]
 chosen_word = random.choice(word_list)
 word_length = len(chosen_word)
-
-#TODO-1: - Create a variable called 'lives' to keep track of the number of lives left.
-#Set 'lives' to equal 6.
 
 lives = 6
 
 #Testing code
-print(f'Pssst, the solution is {chosen_word}.')
+#print(f'Pssst, the solution is {chosen_word}.')
 
 #Create blanks
 display = []
@@ -82,6 +23,9 @@ for num in range(word_length):
 
 while not end_of_game:
     guess = input("Guess a letter: ").lower()
+
+    if guess in display:
+        print(f"You have already guessed: {guess}")
 
     for index, letter in enumerate(chosen_word):
         # print(f"Current position: {index}\n Current letter: {letter}\n Guessed letter: {guess}")
@@ -95,11 +39,8 @@ while not end_of_game:
     #     if letter == guess:
     #         display[position] = letter
 
-    #TODO-2: - If guess is not a letter in the chosen_word,
-    #Then reduce 'lives' by 1.
-    #If lives goes down to 0 then the game should stop and it should print "You lose."
-
     if guess not in chosen_word:
+        print(f"You guessed {guess}, that's not the correct word. You lose a life.")
         lives -= 1
         if lives == 0:
             end_of_game = True
@@ -117,5 +58,4 @@ while not end_of_game:
     #     end_of_game = True
     #     print("You Win")
 
-    #TODO-3: - print the ASCII art from 'stages' that corresponds to the current number of 'lives' the user has remaining.
     print(stages[lives])
