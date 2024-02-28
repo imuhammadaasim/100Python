@@ -28,7 +28,6 @@ while not end_of_game:
         print(f"You have already guessed: {guess}")
 
     for index, letter in enumerate(chosen_word):
-        # print(f"Current position: {index}\n Current letter: {letter}\n Guessed letter: {guess}")
         if letter == guess:
             display[index] = letter
 
@@ -51,7 +50,7 @@ while not end_of_game:
 
     #Check if user has got all letters.
     if chosen_word == "".join(display):
-        game = True
+        end_of_game = True
         print("You Win")
 
     # if "_" not in display:
