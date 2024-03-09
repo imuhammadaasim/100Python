@@ -1,3 +1,7 @@
+from logo import logo
+
+print(logo)
+
 alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm',
             'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z',
             'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm',
@@ -33,7 +37,7 @@ while should_continue:
     # shift = shift % 26
     ceaser(start_text=text, cipher_direction=direction, shift_no=shift)
 
-    ask = input("Type 'yes' if you want to go again, otherwise 'no'.")
+    ask = input("Type 'YES' if you want to go again, otherwise 'NO'.\n").lower()
     if ask == 'no':
         should_continue = False
         print("Good Bye")
