@@ -1,0 +1,30 @@
+Card Values:
+Joker, Queen, and King have a value of 10.
+Ace can have a value of either 1 or 11.
+All other cards have their face value.
+
+Initial Dealing:
+Two cards are randomly dealt to the user.
+Two cards are randomly dealt to the computer, but only the first card is shown to the user.
+
+User Actions:
+After receiving the initial two cards, the user decides whether to "hit" (request another card) or "stand" (keep the current hand).
+If the user's total sum exceeds 21 after hitting, the user busts, and the game ends with the computer winning.
+If the user stands, the turn passes to the computer.
+
+Computer Actions:
+The computer's strategy is to hit until its total sum is at least 17.
+If the computer's total sum exceeds 21, it busts, and the user wins.
+If the computer stands, the game proceeds to determine the winner.
+
+Determining the Winner:
+If either the user or the computer has a total sum of 21 with the initial two cards (blackjack), that player wins.
+If both the user and the computer have blackjack, it's a draw.
+If neither the user nor the computer busts and both stand, compare their total sums.
+If the user's total sum is higher than the computer's, the user wins.
+If the computer's total sum is higher than the user's, the computer wins.
+If both have the same total sum, it's a draw.
+
+Ace Value Handling:
+If an ace is drawn and adding its value as 11 keeps the total sum below or equal to 21, consider the ace as 11.
+If adding an ace as 11 would cause the total sum to exceed 21, consider the ace as 1.
